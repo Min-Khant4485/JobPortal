@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\EmployerInterface;
 use App\Contracts\IndustryInterface;
 use App\Contracts\UploadInterface;
@@ -23,7 +24,7 @@ class EmployerController extends Controller
     protected $employerInterface;
     protected $industryInterface;
     protected $uploadInterface;
-    public function __construct(EmployerInterface $employerInterface, IndustryInterface $industryInterface, UploadInterface $uploadInterface)
+    public function __construct(BaseInterface $employerInterface, IndustryInterface $industryInterface, UploadInterface $uploadInterface)
     {
         $this->employerInterface = $employerInterface;
         $this->industryInterface = $industryInterface;

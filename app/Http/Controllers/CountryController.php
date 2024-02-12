@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\CountryInterface;
 use App\Http\Requests\CountryRequest;
 use App\Models\Country;
@@ -11,14 +12,14 @@ class CountryController extends Controller
 {
     protected $countryInterface;
 
-    public function __construct(CountryInterface $countryInterface)
+    public function __construct(BaseInterface $countryInterface)
     {
         $this->countryInterface = $countryInterface;
     }
 
     public function index()
     {
-        $countries = $this->countryInterface->all();
+        $countries = $this->countryInterface->all('Country');
 
         return view(
             'admin.country',
