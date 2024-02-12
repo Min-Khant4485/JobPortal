@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\SkillCategoryInterface;
 use App\Http\Requests\SkillCategoryRequest;
 use Illuminate\Http\Request;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 class SkillCategoryController extends Controller
 {
     private $skillCategoryInterface;
-    public function __construct(SkillCategoryInterface $skillCategoryInterface)
+    public function __construct(BaseInterface $skillCategoryInterface)
     {
         $this->skillCategoryInterface = $skillCategoryInterface;
     }

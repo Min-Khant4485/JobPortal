@@ -43,8 +43,7 @@ Route::get('/jobseekers/{user_id}/{job_post_id}', [JobSeekerController::class, '
 
 
 //Admin Dashboard
-Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/admin/city', [CityController::class, 'index'])->name('admin.city');
+Route::get('/admin/city', [CityController::class]);
 Route::get('/admin/country', [CountryController::class, 'index'])->name('admin.country');
 Route::get('/admin/common', [CommonController::class, 'index'])->name('admin.common');
 Route::get('/admin/industry', [IndustryController::class, 'index'])->name('admin.industry');
@@ -60,6 +59,8 @@ Route::middleware('auth')->group(function () {
 
 //Admin
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    Route::resource('/admin', AdminController::class);
+
     Route::resource('/users', UserController::class);
     Route::resource('/commons', CommonController::class);
     Route::resource('/countries', CountryController::class);

@@ -1,5 +1,8 @@
 <x-dashboard>
 
+    <x-link-button href="{{ route('cities.create') }}">
+        Create New City
+    </x-link-button>
     @section('table')
         <x-table :headers="['City ID', 'City', 'Date', 'Action']" :rows="$cities->map(function ($city) {
             return [
