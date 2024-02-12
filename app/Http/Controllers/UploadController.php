@@ -18,7 +18,7 @@ class UploadController extends Controller
     private $cv_genre;
     private $uploadInterface;
     private $cvuploadInterface;
-    public function __construct(BaseInterface $uploadInterface, CvUploadInterface $cvuploadInterface)
+    public function __construct(BaseInterface $uploadInterface, BaseInterface $cvuploadInterface)
     {
         $this->uploadInterface = $uploadInterface;
         $this->cvuploadInterface = $cvuploadInterface;

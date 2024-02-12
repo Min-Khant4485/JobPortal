@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\AcademicInterface;
+use App\Contracts\BaseInterface;
 use App\Http\Requests\AcademicRequest;
 use App\Models\Academic;
 use App\Models\AcademicLevel;
@@ -12,7 +13,7 @@ use Illuminate\Http\Request;
 class AcademicController extends Controller
 {
     private  $academicInterface;
-    public function __construct(AcademicInterface $academicInterface)
+    public function __construct(BaseInterface $academicInterface)
     {
         $this->academicInterface = $academicInterface;
     }
