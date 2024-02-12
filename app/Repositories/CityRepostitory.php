@@ -2,12 +2,14 @@
 
 namespace App\Repositories;
 
-use App\Models\Employer;
+use App\Models\City;
 
-class EmployerRepository implements BaseRepository
+
+class CityRepository implements BaseRepository
 {
+
     protected function getModelInstance(string $modelName)
     {
-        return new Employer();
+        return new City();
     }
 }

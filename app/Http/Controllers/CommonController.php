@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\CommonInterface;
 use App\Http\Requests\CommonRequest;
 use App\Models\Common;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class CommonController extends Controller
 {
     private  $commonInterface;
-    public function __construct(CommonInterface $commonInterface,)
+    public function __construct(BaseInterface $commonInterface,)
     {
         $this->commonInterface = $commonInterface;
     }

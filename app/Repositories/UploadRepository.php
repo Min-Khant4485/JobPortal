@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Contracts\UploadInterface;
 use App\Models\Upload;
 
 class UploadRepository extends BaseRepository

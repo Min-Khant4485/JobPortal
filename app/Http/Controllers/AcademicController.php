@@ -29,12 +29,12 @@ class AcademicController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        return view('academics.create', [
-            'acad_types' => AcademicLevel::all()->toArray()
-        ]);
-    }
+    // public function create()
+    // {
+    //     return view('academics.create', [
+    //         'acad_types' => AcademicLevel::all()->toArray()
+    //     ]);
+    // }
 
     public function store(AcademicRequest $request)
     {
