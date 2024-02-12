@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\JobSeekerInterface;
 use App\Http\Requests\JobSeekerRequest;
 use App\Models\Academic;
@@ -19,7 +20,7 @@ use Illuminate\Http\Request;
 class JobSeekerController extends Controller
 {
     protected $jobseekerInterface;
-    public function __construct(JobSeekerInterface $jobseekerInterface)
+    public function __construct(BaseInterface $jobseekerInterface)
     {
         $this->jobseekerInterface = $jobseekerInterface;
         // $this->middleware('auth');

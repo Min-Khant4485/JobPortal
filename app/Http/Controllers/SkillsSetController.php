@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\SkillCategoryInterface;
 use App\Contracts\SkillsSetInterface;
 use App\Http\Requests\SkillsSetRequest;
@@ -13,8 +14,8 @@ class SkillsSetController extends Controller
     private $skillCategoryInterface;
 
     public function __construct(
-        SkillsSetInterface $skillsSetInterface,
-        SkillCategoryInterface $skillCategoryInterface
+        BaseInterface $skillsSetInterface,
+        BaseInterface $skillCategoryInterface
     ) {
         $this->skillsSetInterface = $skillsSetInterface;
         $this->skillCategoryInterface = $skillCategoryInterface;

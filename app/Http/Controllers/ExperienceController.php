@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\ExperienceInterface;
 use App\Http\Requests\ExperienceRequest;
 use App\Models\Experience;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 class ExperienceController extends Controller
 {
     private  $experienceInterface;
-    public function __construct(ExperienceInterface $experienceInterface,)
+    public function __construct(BaseInterface $experienceInterface,)
     {
         $this->experienceInterface = $experienceInterface;
     }
