@@ -24,7 +24,7 @@ class EmployerController extends Controller
     protected $employerInterface;
     protected $industryInterface;
     protected $uploadInterface;
-    public function __construct(BaseInterface $employerInterface, IndustryInterface $industryInterface, UploadInterface $uploadInterface)
+    public function __construct(BaseInterface $employerInterface, BaseInterface $industryInterface, BaseInterface $uploadInterface)
     {
         $this->employerInterface = $employerInterface;
         $this->industryInterface = $industryInterface;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\JobSeekerSkill_Interface;
 use App\Contracts\JobSeekerSkillInterface;
 use App\Contracts\SkillsSetInterface;
@@ -17,8 +18,8 @@ class JobSeekerSkillController extends Controller
     private  $jobSeekerSkillInterface;
     private $skillsSetInterface;
     public function __construct(
-        JobSeekerSkillInterface $jobSeekerSkillInterface,
-        SkillsSetInterface $skillsSetInterface
+        BaseInterface $jobSeekerSkillInterface,
+        BaseInterface $skillsSetInterface
     ) {
         $this->jobSeekerSkillInterface = $jobSeekerSkillInterface;
         $this->skillsSetInterface = $skillsSetInterface;
