@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Db\Core\Crud;
 use App\Contracts\BaseInterface;
+use App\Models\Upload;
 
 class BaseRepository implements BaseInterface
 {
@@ -20,6 +21,8 @@ class BaseRepository implements BaseInterface
 
     public function store(string $modelName, array $data)
     {
+        // dd("hello");
+        // dd($modelName, $data);
         return (new Crud($this->getModelInstance($modelName), $data, null, false, false))->execute();
     }
 
@@ -37,4 +40,12 @@ class BaseRepository implements BaseInterface
     {
         return app("App\\Models\\{$modelName}");
     }
+    // protected function handleImageLogic($model, array &$data)
+    // {
+    //     if ($model instanceof Upload) {
+    //         dd('ehllo');
+    //         // Handle image-related logic here
+    //         $data['upload_url'] = $data['upload_url']; // Adjust as needed
+    //     }
+    // }
 }

@@ -19,7 +19,9 @@ trait UploadTrait
 
             if ($imageCount == 1) {
                 $uploadedImage = $request->file('upload_url');
+                // dd("hello");
                 $image_data['upload_url'] = $uploadedImage->store('public/profile');
+                
                 return $interface->store('Upload', $image_data) ? true : false;
             }
 

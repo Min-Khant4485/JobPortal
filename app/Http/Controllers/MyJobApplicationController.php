@@ -12,7 +12,7 @@ class MyJobApplicationController extends Controller
 {
 
     private $jobapplicationInterface, $jobpostInterface;
-    public function __construct(BaseInterface $jobapplicationInterface, $jobpostInterface)
+    public function __construct(BaseInterface $jobapplicationInterface, BaseInterface $jobpostInterface)
     {
         $this->jobapplicationInterface = $jobapplicationInterface;
         $this->jobpostInterface = $jobpostInterface;

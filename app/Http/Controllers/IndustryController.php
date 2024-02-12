@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\IndustryInterface;
 use App\Http\Requests\IndustryRequest;
 use Illuminate\Http\Request;
@@ -9,14 +10,14 @@ use Illuminate\Http\Request;
 class IndustryController extends Controller
 {
     private $industryInterface;
-    public function __construct(IndustryInterface $industryInterface)
+    public function __construct(BaseInterface $industryInterface)
     {
         $this->industryInterface = $industryInterface;
     }
 
     public function index()
     {
-        $industries = $this->industryInterface->all();
+        $industries = $this->industryInterface->all('Industry');
 
         return view(
             'admin.industry',
@@ -28,7 +29,7 @@ class IndustryController extends Controller
 
     public function create()
     {
-        return view('industries.create');
+        // return view('industries.create');
     }
 
     public function store(IndustryRequest $request)

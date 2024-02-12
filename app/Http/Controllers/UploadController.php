@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\CvUploadInterface;
 use App\Contracts\UploadInterface;
 use App\Http\Requests\UploadRequest;
@@ -17,7 +18,7 @@ class UploadController extends Controller
     private $cv_genre;
     private $uploadInterface;
     private $cvuploadInterface;
-    public function __construct(UploadInterface $uploadInterface, CvUploadInterface $cvuploadInterface)
+    public function __construct(BaseInterface $uploadInterface, CvUploadInterface $cvuploadInterface)
     {
         $this->uploadInterface = $uploadInterface;
         $this->cvuploadInterface = $cvuploadInterface;
@@ -37,6 +38,7 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('upload_url')) {
+            // dd($request->all());
             $this->storeImage($request, auth()->user()->id, $this->profile_genre, $this->uploadInterface);
             return redirect()->route('jobseekers.index')->with('success', 'Image is successfully uploaded!');
         } elseif ($request->hasFile('upload_cv')) {

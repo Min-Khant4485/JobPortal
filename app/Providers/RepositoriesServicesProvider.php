@@ -19,14 +19,14 @@ class RepositoriesServicesProvider extends ServiceProvider
     public function register(): void
     {
         // $this->app->bind(CityInterface::class, CityRepository::class);
-        $this->app->bind(
-            'App\Contracts\CountryInterface',
-            'App\Repositories\CountryRepository',
-        );
-        $this->app->bind(
-            'App\Contracts\CityInterface',
-            'App\Repositories\CityRepository',
-        );
+        // $this->app->bind(
+        //     'App\Contracts\CountryInterface',
+        //     'App\Repositories\CountryRepository',
+        // );
+        // $this->app->bind(
+        //     'App\Contracts\CityInterface',
+        //     'App\Repositories\CityRepository',
+        // );
         $this->app->bind(
             'App\Contracts\ExperienceInterface',
             'App\Repositories\ExperienceRepository',
@@ -51,22 +51,22 @@ class RepositoriesServicesProvider extends ServiceProvider
             'App\Contracts\JobSeekerSkillInterface',
             'App\Repositories\JobSeekerSkillRepository',
         );
-        $this->app->bind(
-            'App\Contracts\IndustryInterface',
-            'App\Repositories\IndustryRepository',
-        );
-        $this->app->bind(
-            'App\Contracts\EmployerInterface',
-            'App\Repositories\EmployerRepository',
-        );
-        $this->app->bind(
-            'App\Contracts\JobPostInterface',
-            'App\Repositories\JobPostRepository',
-        );
-        $this->app->bind(
-            'App\Contracts\UserInterface',
-            'App\Repositories\UserRepository',
-        );
+        // $this->app->bind(
+        //     'App\Contracts\IndustryInterface',
+        //     'App\Repositories\IndustryRepository',
+        // );
+        // $this->app->bind(
+        //     'App\Contracts\EmployerInterface',
+        //     'App\Repositories\EmployerRepository',
+        // );
+        // $this->app->bind(
+        //     'App\Contracts\JobPostInterface',
+        //     'App\Repositories\JobPostRepository',
+        // );
+        // $this->app->bind(
+        //     'App\Contracts\UserInterface',
+        //     'App\Repositories\UserRepository',
+        // );
         $this->app->bind(
             'App\Contracts\UploadInterface',
             'App\Repositories\UploadRepository',

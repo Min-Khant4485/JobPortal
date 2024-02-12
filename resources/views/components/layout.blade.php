@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-scroll bg-cover bg-gradient-to-b from-slate-800 via-slate-300 to-orange-100">
-    <nav class="flex items-center justify-between mx-auto text-orange-400 text-lg font-medium mb-0">
+    <nav class="flex items-center justify-between mx-auto text-orange-400 text-lg font-medium mb-0 border rounded-sm">
         <div class="pl-2">
             <a href="{{ route('home.index') }}">
                 <img src="{{ asset('img/logo.png') }}" alt="logo" width="200px" height="100px">

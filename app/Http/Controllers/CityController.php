@@ -8,16 +8,17 @@ use App\Contracts\CountryInterface;
 use App\Http\Requests\CityRequest;
 use App\Models\City;
 use Illuminate\Http\Request;
+use Illuminate\Testing\Constraints\CountInDatabase;
 use Illuminate\Validation\Rule;
 
 class CityController extends Controller
 {
     private  $cityInterface;
-    private  $countryInterface;
-    public function __construct(BaseInterface $cityInterface, $countryInterface)
+    // private  $countryInterface;
+    public function __construct(BaseInterface $cityInterface,)
     {
         $this->cityInterface = $cityInterface;
-        $this->countryInterface = $countryInterface;
+        // $this->countryInterface = $countryInterface;
     }
     /**
      * Display a listing of the resource.
@@ -36,39 +37,38 @@ class CityController extends Controller
 
     public function create()
     {
-        return view('cities.create', [
-            'cities' => $this->cityInterface->all('City')
-        ]);
+        // $cities = $this->countryInterface->all('Country');
+        // return view('cities.create', compact('countries'));
     }
 
     public function store(CityRequest $request)
     {
-        $validatedData = $request->validated();
-        $city = $this->cityInterface->store('City', $validatedData);
-        if (!$city) {
-            return redirect()->route('admin.index')
-                ->with('Error');
-            //  return "City cannot be stored";
-        }
-        return redirect()->route('cities.index')
-            ->with('success', 'City created successfully.');
+        // $validatedData = $request->validated();
+        // $city = $this->cityInterface->store('City', $validatedData);
+        // if (!$city) {
+        //     return redirect()->route('admin.index')
+        //         ->with('Error');
+        //     //  return "City cannot be stored";
+        // }
+        // return redirect()->route('cities.index')
+        //     ->with('success', 'City created successfully.');
     }
 
     public function edit($id)
     {
-        $city = $this->cityInterface->findByID('City', $id);
-        if (!$city) {
-            return redirect()->route('cities.index')
-                ->with('Error');
-            //  return "City cannot be stored";
-        }
-        foreach ($city as $c) {
-            return view('cities.edit', [
-                'city' => $c,
-                'countries' => $this->countryInterface->all('City'),
-                'country' => $c['country']
-            ]);
-        }
+        // $city = $this->cityInterface->findByID('City', $id);
+        // if (!$city) {
+        //     return redirect()->route('cities.index')
+        //         ->with('Error');
+        //     //  return "City cannot be stored";
+        // }
+        // foreach ($city as $c) {
+        //     return view('cities.edit', [
+        //         'city' => $c,
+        //         // 'countries' => $this->countryInterface->all('Country'),
+        //         'country' => $c['country']
+        //     ]);
+        //}
     }
 
     public function update(CityRequest $request, $id)
