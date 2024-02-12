@@ -98,7 +98,7 @@
                     Configuration</p>
             </li>
             <li>
-                <a class="" href="{{ route('admin.country') }}">
+                <a class="" href="{{ route('countries.index') }}">
                     <x-button
                         class="middle none font-bold center transition-all border-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr text-white active:shadow-md active:shadow-orange-500/20 hover:shadow-lg hover:from-orange-400 to-orange-300 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -113,7 +113,7 @@
                 </a>
             </li>
             <li>
-                <a class="" href="{{ route('admin.city') }}">
+                <a class="" href="{{ route('cities.index') }}">
                     <x-button
                         class="middle none font-bold center transition-all border-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr text-white active:shadow-md active:shadow-orange-500/20 hover:shadow-lg hover:from-orange-400 to-orange-300 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">

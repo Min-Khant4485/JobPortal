@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" /> --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite('resources/css/app.scss')
 
     <title>Dashboard</title>
@@ -26,11 +27,11 @@
                             <x-breadcrumb :links="['Dashboard' => route('admin.index')]" class="mt-5 mb-2">
                             </x-breadcrumb>
                         </nav>
-                        <h6
+                        {{-- <h6
                             class="block antialiased tracking-normal text-base font-semibold leading-relaxed text-gray-900">
-                            IT Vision Hub</h6>
+                            IT Vision Hub</h6> --}}
                     </div>
-                
+
                     <div class="flex items-center">
                         <div name="float_search" class="mr-auto md:mr-4 md:w-56">
                             <div class="relative w-full min-w-[200px] h-10">
@@ -54,7 +55,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <a href="#">
+                        {{-- <a href="#">
                             <button
                                 class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 hidden items-center gap-1 px-4 xl:flex"
                                 type="button">
@@ -76,7 +77,7 @@
                                     </svg>
                                 </span>
                             </button>
-                        </a>
+                        </a> --}}
                         <button
                             class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
                             type="button">
@@ -121,5 +122,8 @@
         </div>
         <footer>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 
 </html>
