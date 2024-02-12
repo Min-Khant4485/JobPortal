@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Contracts\BaseInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\CommonTrait;
 use App\Models\Employer;
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -35,6 +39,15 @@ class RegisterController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
     // protected $redirectTo = RouteServiceProvider::JOBPOST;
 
+    // private  $cityInterface;
+    // private  $countryInterface;
+    // public function __construct(BaseInterface $cityInterface, $countryInterface)
+    // {
+    //     $this->cityInterface = $cityInterface;
+    //     $this->countryInterface = $countryInterface;
+    // }
+
+
     /**
      * Create a new controller instance.
      *
@@ -42,9 +55,10 @@ class RegisterController extends Controller
      */
 
     private $temporaryData = [];
-
-    public function __construct()
+    private  $userInterface;
+    public function __construct(BaseInterface $userInterface,)
     {
+        $this->userInterface = $userInterface;
         $this->middleware('guest');
     }
 
@@ -112,6 +126,6 @@ class RegisterController extends Controller
         //     $userData['company_name'] = $data['company_name'];
         // }
         // dd($userData);
-        return User::create($userData);
+        return  $this->userInterface->store('User', $userData);
     }
 }

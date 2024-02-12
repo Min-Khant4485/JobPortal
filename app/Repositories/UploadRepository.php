@@ -2,50 +2,27 @@
 
 namespace App\Repositories;
 
-use App\Db\Core\Crud;
 use App\Contracts\UploadInterface;
 use App\Models\Upload;
 
-class UploadRepository implements UploadInterface
+class UploadRepository extends BaseRepository
 {
-    public function all()
+    protected function getModelInstance(string $modelName)
     {
-        return Upload::paginate(10);
+        return new Upload();
     }
-    public function findByID(string $modelName, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        return $model::where('id', $id)->get();
-    }
+    // public function store(string $modelName, array $data)
+    // {
+    //     $model = $this->getModelInstance($modelName);
+    //     $this->handleImageLogic($model, $data);
+    //     dd("ehllo");
+    //     return parent::store($modelName, $data);
+    // }
 
-    public function store(string $modelName, array $data)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        if (get_class($model) !== 'App\Models\Upload') {
-            return (new Crud($model, $data, null, false, false))->execute();
-        }
-        $crud = new Crud($model, $data, null, false, false);
-        $crud->setImageDirectory('public/profile/', 'App\Models\Upload');
-        $data['upload_url'] = $data['upload_url'];
-        return $crud->execute();
-    }
-
-
-
-    public function update(string $modelName, array $data, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        if (get_class($model) !== 'App\Models\Upload') {
-            return (new Crud($model, $data, $id, true, false))->execute();
-        }
-        $crud = new Crud($model, $data, $id, true, false);
-        $crud->setImageDirectory('public/profile/', 'App\Models\Upload');
-        return $crud->execute();
-    }
-
-    public function delete(string $modelName, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        return (new Crud($model, null, $id, false, true))->execute();
-    }
+    // public function update(string $modelName, array $data, int $id)
+    // {
+    //     $model = $this->getModelInstance($modelName);
+    //     $this->handleImageLogic($model, $data);
+    //     return parent::update($modelName, $data, $id);
+    //}
 }

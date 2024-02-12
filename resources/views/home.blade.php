@@ -103,13 +103,11 @@
 
     {{-- Latest Jobs --}}
 
-    {{-- <x-card>
-        <h3 class="block content-center text-2xl text-slate-900 font-semibold mt-1">Recent Jobs</h3>
-    </x-card> --}}
 
 
 
-    <div class="container border m-10 bg-slate-200">
+
+    <div class="container border m-5 bg-slate-200">
         <h3 class=" mx-4 text-2xl text-slate-950 font-semibold mt-1">Latest Jobs</h3>
         <div class="mb-1 mt-1 ml-4 mr-4 grid grid-cols-2 gap-4">
             {{-- @dd($jobposts); --}}

@@ -2,37 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Db\Core\Crud; 
-use App\Contracts\IndustryInterface;
 use App\Models\Industry;
 
-class IndustryRepository implements IndustryInterface
+class IndustryRepository implements BaseRepository
 {
-    public function all()
-    {
-        return Industry::paginate(10);
-    }
-    public function findByID(string $modelName, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        return $model::where('id', $id)->get();
-    }
 
-    public function store(string $modelName, array $data)
+    protected function getModelInstance(string $modelName)
     {
-        $model = app("App\\Models\\{$modelName}");
-        return (new Crud($model, $data, null, false, false))->execute();
-    }
-
-    public function update(string $modelName, array $data, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        return (new Crud($model, $data, $id, true, false))->execute();
-    }
-
-    public function delete(string $modelName, int $id)
-    {
-        $model = app("App\\Models\\{$modelName}");
-        return (new Crud($model, null, $id, false, true))->execute();
+        return new Industry();
     }
 }

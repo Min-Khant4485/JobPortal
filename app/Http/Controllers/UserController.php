@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\BaseInterface;
 use App\Contracts\UserInterface;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     private $userInterface;
-    public function __construct(UserInterface $userInterface)
+    public function __construct(BaseInterface $userInterface)
     {
         $this->userInterface = $userInterface;
     }
